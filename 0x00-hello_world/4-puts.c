@@ -1,13 +1,10 @@
-/**
- * This program prints an important message
- * under GG public license
- */
+/*  This program prints an important message */
 
 #include <stdio.h>
 
 /**
- * main function is the starting point of the program.
- * returns : a srting!
+ * main - the starting point of the program.
+ * Return: 0 for sucsess
  */
 int main(void)
 {
