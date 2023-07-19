@@ -1,6 +1,6 @@
 /* this program prints _putchar to the screen */
 
-#include <stdio.h>
+#include "main.h"
 
 void print_alphabet(void);
 
@@ -23,8 +23,8 @@ void print_alphabet(void)
 
 	while (i <= 'z')
 	{
-		putchar(i);
+		_putchar(i);
 		i++;
 	}
-	putchar('\n');
+	_putchar('\n');
 }
