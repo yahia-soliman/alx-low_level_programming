@@ -2,18 +2,6 @@
 
 #include "main.h"
 
-void print_alphabet(void);
-
-/**
- * main - the starting point of the program
- * Return: 0
- */
-int main(void)
-{
-	print_alphabet();
-	return (0);
-}
-
 /**
  * print_alphabet - the starting point of the program
  */
