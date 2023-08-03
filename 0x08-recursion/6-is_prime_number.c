@@ -12,6 +12,13 @@ int _sqrt(int i, int n)
 		return (i);
 }
 
+/**
+ * is_prm - checks if number n is prime
+ * @n:                number n
+ * @j: check if n devidable by j
+ * @i: max value for j
+ * Return: prime (1) not prime (0)
+ */
 int is_prm(int j, int i, int n)
 {
 	if (n % j == 0)
@@ -22,18 +29,15 @@ int is_prm(int j, int i, int n)
 		return (is_prm(j + 2, i, n));
 }
 
-
 /**
- * is_prime_number - calculates the sqare root
- * @n:     for number n
- * Return: square root
+ * is_prime_number - checks if number n is prime
+ * @n:                         number n
+ * Return: prime (1) not prime (0)
  */
 int is_prime_number(int n)
 {
 	int i = _sqrt(0, n);
 
-		n *= -1;
-	
 	if (n % 2 == 0 || n < 2)
 		return (0);
 	else
