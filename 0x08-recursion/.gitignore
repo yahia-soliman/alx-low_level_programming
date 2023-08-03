@@ -1,0 +1,4 @@
+*.out
+_*
+test*
+BAD*
