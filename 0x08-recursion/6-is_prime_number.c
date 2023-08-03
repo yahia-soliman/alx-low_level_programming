@@ -32,7 +32,10 @@ int is_prime_number(int n)
 {
 	int i = _sqrt(0, n);
 
-	if (n % 2 == 0)
+	if (n < 0)
+		n *= -1;
+	
+	if (n % 2 == 0 || n == 1)
 		return (0);
 	else
 		return (is_prm(3, i, n));
