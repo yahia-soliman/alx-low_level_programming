@@ -23,7 +23,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (ptr2 == NULL)
 		return (NULL);
 
-	while ((i < old_size || i < new_size) && ptr1 != 0)
+	while ((i <= old_size || i <= new_size) && *(ptr1 + i) != 0)
 	{
 		*(ptr2 + i) = *(ptr1 + i);
 		i++;
