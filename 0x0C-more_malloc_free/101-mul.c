@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <unistd.h>
 
 int _putchar(char c);
 void error(void);
@@ -93,6 +94,16 @@ void prnt(char *s)
 		_putchar(*s);
 		prnt(s + 1);
 	}
+}
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ * Return: On success 1 else -1
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
 }
 
 /**
