@@ -17,7 +17,7 @@ char *mulc(char *str, char num, unsigned int n, unsigned int i);
  */
 int main(int ac, char **av)
 {
-	unsigned int i, c1, c2, cr; 
+	unsigned int i, c1, c2, cr;
 	char *n1, *n2, *mulr, *res;
 
 	if (ac != 3)
@@ -30,7 +30,7 @@ int main(int ac, char **av)
 		if (av[i][0] == '0' && av[i][1] == '\0')
 		{
 			prnt("0");
-			return(0);
+			return (0);
 		}
 	}
 	/* make shorter value first */
@@ -67,11 +67,13 @@ int main(int ac, char **av)
 
 	free(n1);
 	free(n2);
-	free(res);	
+	free(res);
 	return (0);
 }
 
-/* error - reports an error and exits the program */
+/**
+ * error - reports error and exits the program
+ */
 void error(void)
 {
 	prnt("Error");
@@ -109,7 +111,7 @@ unsigned int lens(char *s)
 
 /**
  * alloc_zero - allocates array of char '0'
- * @n: 			number of bytes to allocate
+ * @n:          number of bytes to allocate
  * Return: allocated memory for  the  array
  */
 char *alloc_zero(unsigned int n)
@@ -171,7 +173,8 @@ void adds(char *src, char *dst, char *end, int rem)
  * mulc - multiplies a string of numbers by 1 number
  * @str:  pointer to long number  string  (reversed)
  * @num:  the value  we want to multiply by   (char)
- * @i:    the index  of the  starting digit  to copy
+ * @n:    the index  of  the   last   digit  to copy
+ * @i:    the index  of  the   first  digit  to copy
  * Return: pointer to the result
  */
 char *mulc(char *str, char num, unsigned int n, unsigned int i)
