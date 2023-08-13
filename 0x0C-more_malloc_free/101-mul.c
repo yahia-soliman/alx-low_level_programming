@@ -26,11 +26,6 @@ int main(int ac, char **av)
 	{
 		while (av[i][0] == '0' && av[i][1] != '\0')
 			*(av + i) += 1;
-		if (av[i][0] == '0' && av[i][1] == '\0')
-		{
-			prnt("0");
-			return (0);
-		}
 	}
 	/* make shorter value first */
 	if (lens(av[2]) < lens(av[1]))
@@ -61,7 +56,7 @@ int main(int ac, char **av)
 
 	revs(res, n2, cr);
 
-	while (*n2 == '0')
+	while (*n2 == '0' && *(n2 + 1) != 0)
 		n2 += 1;
 
 	prnt(n2);
