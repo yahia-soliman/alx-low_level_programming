@@ -43,13 +43,19 @@ int main(int ac, char **av)
 	c1 = lens(av[1]);
 	c2 = lens(av[2]);
 	cr = c1 + c2;
-
+	/* handles segfault bug when cr divisble by 16*/
+	if (cr % 16 == 0)
+		cr += 1;
+	if (c1 % 16 == 0)
+		c1 += 1;
 	n1 = alloc_zero(c1);
 	n2 = alloc_zero(cr);
 	res = alloc_zero(cr);
-	revs(av[1], n1, c1);
-	revs(av[2], n2, c2);
+	if ((c1 - 1) % 16 == 0)
+		c1 -= 1;
 
+	revs(av[2], n2, c2);
+	revs(av[1], n1, c1);
 	for (i = 0; i < c1; i++)
 	{
 		mulr = mulc(n2, n1[i], cr, i);
@@ -59,10 +65,10 @@ int main(int ac, char **av)
 
 	revs(res, n2, cr);
 
-	if (*n2 == '0')
-		prnt(n2 + 1);
-	else
-		prnt(n2);
+	while (*n2 == '0')
+		n2 += 1;
+
+	prnt(n2);
 
 	free(n1);
 	free(n2);
@@ -182,6 +188,8 @@ char *mulc(char *str, char num, unsigned int n, unsigned int i)
 	unsigned int j = 0;
 	char *r = alloc_zero(n);
 
+	if (r == NULL)
+		error();
 	while (i < n)
 	{
 		res = rem + ((num - '0') * (str[j] - '0'));
