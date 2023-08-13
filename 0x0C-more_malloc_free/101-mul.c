@@ -46,13 +46,9 @@ int main(int ac, char **av)
 	/* handles segfault bug when cr divisble by 16*/
 	if (cr % 16 == 0)
 		cr += 1;
-	if (c1 % 16 == 0)
-		c1 += 1;
-	n1 = alloc_zero(c1);
+	n1 = alloc_zero(c1 + (c1 % 16 == 0));
 	n2 = alloc_zero(cr);
 	res = alloc_zero(cr);
-	if ((c1 - 1) % 16 == 0)
-		c1 -= 1;
 
 	revs(av[2], n2, c2);
 	revs(av[1], n1, c1);
