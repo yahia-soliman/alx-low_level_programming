@@ -42,8 +42,28 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (d)
 	{
 		d->name = copyof(name);
+		if !(d->name)
+		{
+			free(d->name);
+			free(d);
+			return(NULL);
+		}
+
 		d->age = age;
+
 		d->owner = copyof(owner);
+		if !(d->owner)
+		{
+			free(d->owner);
+			free(d->name);
+			free(d);
+			return(NULL);
+		}
+		return (d);
 	}
-	return (d);
+	else
+	{
+		free (d);
+		return (NULL);
+	}
 }
