@@ -27,7 +27,7 @@ char *copyof(char *string)
 	if (string == NULL)
 		return (NULL);
 
-	i = _strlen(string);
+	i = 1 + _strlen(string);
 	r = malloc(i);
 
 	if (r)
