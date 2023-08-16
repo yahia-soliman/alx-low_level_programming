@@ -17,10 +17,11 @@ char *copyof(char *string)
 		return (NULL);
 
 	i = strlen(string);
-	r = malloc(i - 1);
+	r = malloc(i);
 
 	if (r)
 	{
+		*(r + i) = '\0';
 		while (i--)
 			*(r + i) = string[i];
 	}
@@ -38,31 +39,24 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *d = malloc(sizeof(dog_t));
 
-	if (d)
-	{
-		d->name = copyof(name);
-		if (d->name == NULL)
-		{
-			free(d->name);
-			free(d);
-			return (NULL);
-		}
+	if (d == NULL)
+		return (NULL);
 
-		d->age = age;
-
-		d->owner = copyof(owner);
-		if (d->owner == NULL)
-		{
-			free(d->owner);
-			free(d->name);
-			free(d);
-			return (NULL);
-		}
-		return (d);
-	}
-	else
+	d->name = copyof(name);
+	if (d->name == NULL)
 	{
 		free(d);
 		return (NULL);
 	}
+
+	d->age = age;
+
+	d->owner = copyof(owner);
+	if (d->owner == NULL)
+	{
+		free(d->name);
+		free(d);
+		return (NULL);
+	}
+	return (d);
 }
