@@ -17,11 +17,10 @@ char *copyof(char *string)
 		return (NULL);
 
 	i = strlen(string);
-	r = malloc(i);
+	r = malloc(i - 1);
 
 	if (r)
 	{
-		*(r + i) = '\0';
 		while (i--)
 			*(r + i) = string[i];
 	}
@@ -45,6 +44,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		if (d->name == NULL)
 		{
 			free(d->name);
+			free(d);
+			return (NULL);
 		}
 
 		d->age = age;
@@ -53,6 +54,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 		if (d->owner == NULL)
 		{
 			free(d->owner);
+			free(d->name);
+			free(d);
+			return (NULL);
 		}
 		return (d);
 	}
