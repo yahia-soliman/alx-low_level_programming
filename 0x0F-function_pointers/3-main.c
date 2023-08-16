@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 	f = get_op_func(argv[2]);
 	if (f == NULL)
 	{
-		puts("Error 99");
+		puts("Error");
 		return (99);
 	}
 
