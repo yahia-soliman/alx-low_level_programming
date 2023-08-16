@@ -15,14 +15,14 @@ int main(int argc, char **argv)
 	if (argc != 4)
 	{
 		puts("Error");
-		exit(98);
+		return (98);
 	}
 
 	f = get_op_func(argv[2]);
-	if (f == NULL)
+	if (f == NULL || argv[2][1])
 	{
 		puts("Error");
-		exit(99);
+		return (99);
 	}
 
 	a = atoi(argv[1]);
