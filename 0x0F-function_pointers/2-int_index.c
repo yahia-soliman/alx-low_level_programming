@@ -4,6 +4,7 @@
  * @array:     array to look into.
  * @size:      size of array.
  * @cmp:       function used to cmpare elements
+ * Return: index of the number or -1 if not find
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {

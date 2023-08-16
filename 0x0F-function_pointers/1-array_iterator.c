@@ -1,7 +1,7 @@
 #include <stdlib.h>
 /**
  * array_iterator - excutes a function on each
- * @arry:           element of  a  given array
+ * @array:           element of  a  given array
  * @size:   size of the array
  * @action: the function to excute on elements
  */

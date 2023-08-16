@@ -2,3 +2,4 @@ test*
 a.out
 _putchar
 *swp
+*.gch
