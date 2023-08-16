@@ -1,12 +1,23 @@
 #include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "dog.h"
 
 /**
- * copyof - a string in a new allocated memory
- * @string: pointer to copy from
- * Return:  pointer the the new copy
+ * _strlen - counts the characters
+ * @str:     string to  count from
+ * Return:   length of  the string
+ */
+int _strlen(char *str)
+{
+	if (*str)
+		return (1 + _strlen(str + 1));
+	return (0);
+}
+
+/**
+ * copyof - allocates a copy of string
+ * @string: source string to copy from
+ * Return:  pointer  to   the new copy
+ *          allocated in  the heap
  */
 char *copyof(char *string)
 {
@@ -16,7 +27,7 @@ char *copyof(char *string)
 	if (string == NULL)
 		return (NULL);
 
-	i = strlen(string);
+	i = _strlen(string);
 	r = malloc(i);
 
 	if (r)
