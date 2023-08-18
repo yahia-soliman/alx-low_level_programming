@@ -15,6 +15,7 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	int x, y;
+	char *sep = "";
 	void (*ptrf)(va_list);
 	func arr[4] = {
 		{'c', pc},
@@ -24,15 +25,17 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 	x = 0;
-	while (format[x] && format)
+	while (format && format[x])
 	{
 		y = 0;
 		while (y < 4)
 		{
 			if (arr[y].c == format[x])
 			{
+				printf("%s", sep);
 				ptrf = arr[y].f;
 				ptrf(args);
+				sep = ", ";
 			}
 			y++;
 		}

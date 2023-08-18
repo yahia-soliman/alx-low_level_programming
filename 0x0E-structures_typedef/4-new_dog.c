@@ -27,15 +27,11 @@ char *copyof(char *string)
 	if (string == NULL)
 		return (NULL);
 
-	i = 1 + _strlen(string);
+	i = _strlen(string) + 1;
 	r = malloc(i);
 
-	if (r)
-	{
-		*(r + i) = '\0';
-		while (i--)
-			*(r + i) = string[i];
-	}
+	while (r != NULL && i--)
+		*(r + i) = string[i];
 	return (r);
 }
 
