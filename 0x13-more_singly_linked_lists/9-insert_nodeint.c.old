@@ -1,0 +1,48 @@
+#include "lists.h"
+#include <stdlib.h>
+/**
+ * insert_nodeint_at_intex - inserts a node at the nth position of a list
+ * @head:                    pointer to the first node of the linked list
+ * @index:    the position of the new node (starting from 0)
+ * @n: the value of the integer to store inside the new node
+ *
+ * Return: the needed node if it exists
+ */
+listint_t *insert_nodeint_at_index(listint_t *head, unsigned int index, int n)
+{
+	unsigned int i = 0;
+	listint_t *copy = NULL;
+
+	while (head && i < index)
+	{
+		i++;
+		head = head->next;
+	}
+
+	if (head && i == index)
+	{
+		copy = malloc(sizeof(*copy));
+		if (copy)
+		{
+		/*
+		 *  node[i-1] --> node[i]  --> node[i+1]
+		 *                copy[i]  --> node[i+1]
+		 */
+			copy->n = head->n;
+			copy->next = head->next;
+		/*
+		 *  node[i-1] --> node[i] 
+		 *                  |
+		 *                  V
+		 *                copy[i]  --> node[i+1]
+		 *
+		 * now node[i] holds the new data
+		 * and node[i+1] holds the data that was in node[i]
+		 */
+			head->n = n;
+			head->next = copy;
+		}
+	}
+
+	return (head);
+}
