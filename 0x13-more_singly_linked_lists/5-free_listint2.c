@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "lists.h"
 /**
  * free_listint2 - frees all the nodes of a linked list
@@ -7,12 +6,12 @@
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *push = NULL;
+	listint_t *push;
 
 	if (head)
 		push = *head;
 
-	while (push)
+	while (*head)
 	{
 		push = (*head)->next;
 		free(*head);

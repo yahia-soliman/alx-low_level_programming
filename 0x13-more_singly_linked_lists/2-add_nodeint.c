@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "lists.h"
 /**
  * add_nodeint - adds a node at the beginning of a linked list
@@ -9,18 +8,12 @@
  */
 listint_t *add_nodeint(listint_t **head, const int n)
 {
-	listint_t *new = NULL;
+	listint_t *new;
 
-	if (head)
-	{
-		new = malloc(sizeof(*new));
-		if (new)
-		{
-			new->n = n;
-			new->next = *head;
-			*head = new;
-		}
-	}
+	new = malloc(sizeof(*new));
+	new->n = n;
+	new->next = *head;
+	*head = new;
 
-	return (new);
+	return (*head);
 }

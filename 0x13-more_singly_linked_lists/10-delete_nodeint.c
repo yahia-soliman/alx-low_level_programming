@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdlib.h>
 /**
  * delete_nodeint_at_index - gives a pointer to the nth node of a list
  * @head:  pointer to the first node of the linked list
