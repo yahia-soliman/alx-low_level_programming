@@ -1,7 +1,8 @@
 #include "main.h"
-#define BUFFER_SIZE 1024
+
 void error(int no, char *f);
 void error100(int fd);
+
 /**
  * main - program to copy a file content
  * @argc: number of command line strings
@@ -55,8 +56,8 @@ int main(int argc, char **argv)
 void error(int no, char *f)
 {
 	char *str[] = {
-	"Usage: %s file_from file_to\n",
-	"Error: Can't read from %s\n",
+	"Usage: cp file_from file_to\n",
+	"Error: Can't read from file %s\n",
 	"Error: Can't write to %s\n",
 	};
 
