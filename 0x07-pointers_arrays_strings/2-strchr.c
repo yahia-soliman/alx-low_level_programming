@@ -8,14 +8,12 @@ char *_strchr(char *s, char c)
 {
 	int i = 0;
 
-	while (s[i] != 0)
+	while (s && s[i])
 	{
 		if (s[i] == c)
-			break;
+			return (s + i);
 		i++;
 	}
-	if (s[i] == 0)
-		return (0);
-	else
-		return (s + i);
+
+	return ((void *) 0);
 }
