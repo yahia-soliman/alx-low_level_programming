@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * print_chessboard - if you can
  * @a: the grid of the board

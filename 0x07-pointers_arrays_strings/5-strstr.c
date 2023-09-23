@@ -13,7 +13,7 @@ char *_strstr(char *s1, char *s2)
 		j = 0;
 		while (s1[i + j] && s2[j] && s2[j] == s1[i + j])
 			j++;
-		if (j && s2[j] == 0)
+		if (s2[j] == 0)
 			return (s1 + i);
 		i++;
 	}
