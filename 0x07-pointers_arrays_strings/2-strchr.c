@@ -6,13 +6,15 @@
  */
 char *_strchr(char *s, char c)
 {
-	int i = 0;
+	int i = -1;
 
-	while (s && s[i])
+	if (s)
 	{
+	do {
+		i++;
 		if (s[i] == c)
 			return (s + i);
-		i++;
+	} while (s[i])
 	}
 
 	return ((void *) 0);
