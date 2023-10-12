@@ -1,7 +1,7 @@
 #include <stdio.h>
 int palindrome(int n)
 {
-	char str[10];
+	char str[15];
 	int l, r;
 
 	sprintf(str, "%d", n);
@@ -20,21 +20,19 @@ int palindrome(int n)
 
 int main(void)
 {
-	int i, j = 1000;
+	int i, j = 1000, max = 0, prod = 0;
 
-	while (j--)
+	while (j-- > 100 && prod >= max)
 	{
-		i = j + 1;
-		while (i--)
-		{
-			if (palindrome(i * j))
-			{
-				printf("%d", i * j);
-				return (0);
-			}
-		}
+		i = j;
+		do {
+			i--;
+			prod = i * j;
+			if (prod > max && palindrome(prod))
+				max = prod;
+		} while (i > 100 && prod >= max);
 	}
+	printf("%d", max);
 
-	printf("not found\n");
-	return (1);
+	return (0);
 }
