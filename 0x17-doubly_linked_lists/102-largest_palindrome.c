@@ -22,15 +22,15 @@ int main(void)
 {
 	int i, j = 1000, max = 0, prod = 0;
 
-	while (j-- > 100 && prod >= max)
+	while (j--)
 	{
-		i = j;
-		do {
-			i--;
+		i = j + 1;
+		while (i--)
+		{
 			prod = i * j;
 			if (prod > max && palindrome(prod))
 				max = prod;
-		} while (i > 100 && prod >= max);
+		}
 	}
 	printf("%d", max);
 
