@@ -1,9 +1,10 @@
 #include "lists.h"
 /**
  * insert_dnodeint_at_index - in a doubly linked list
- * @head: the node at index 0
- * @index: of the wanted node
- * Return: the node at the given index if found
+ * @h: the node at  index 0
+ * @idx: to insert the node in
+ * @n: the number inside the new node
+ * Return: pointer to the new node
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
@@ -26,10 +27,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		new->n = n;
 		new->prev = prev;
 		new->next = head;
-		prev->next = new;
+		if (prev)
+			prev->next = new;
 		if (head)
 			head->prev = new;
-		else if (prev == NULL)
+		else if (*h == NULL)
 			*h = new;
 	}
 	return (new);
