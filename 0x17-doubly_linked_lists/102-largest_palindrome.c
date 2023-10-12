@@ -29,7 +29,7 @@ int main(void)
 		{
 			if (palindrome(i * j))
 			{
-				printf("%d = %d * %d\n", i * j, i, j);
+				printf("%d", i * j);
 				return (0);
 			}
 		}
