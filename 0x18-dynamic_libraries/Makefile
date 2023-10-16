@@ -15,5 +15,10 @@ operations: ops.c
 	$(CC) $(CFLAGS) -c ops.c
 	$(CC) ops.o $(CFLAGS) -fPIC -shared -o 100-operations.so
 
+gm: testio.c
+	gcc testio.c -c
+	gcc testio.o -fpic -shared -o fakeio.so
+	rm testio.o
+
 clean:
 	rm -rf *.o ./pkg
