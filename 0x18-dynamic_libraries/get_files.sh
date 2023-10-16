@@ -6,6 +6,7 @@ for file in "${files[@]}"; do
 	if [[ "$filepath" ]]; then
 		cp ${filepath[0]} ./pkg/
 	else
-		touch ./pkg/empty_${file}.c
+		grepstr=$(grep ${file} ./main.h)
+		echo ${grepstr/;/{}} > ./pkg/empty_${file}.c
 	fi
 done
