@@ -5,7 +5,8 @@
  */
 int _atoi(char *s)
 {
-	int total = 0, signal = 1, i = 0;
+	int signal = 1, i = 0;
+	unsigned int total = 0;
 
 	if (!s)
 		return (0);
