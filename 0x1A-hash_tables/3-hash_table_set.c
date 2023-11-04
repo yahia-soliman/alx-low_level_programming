@@ -1,6 +1,6 @@
 #include "hash_tables.h"
 char *_strdup(const char *str);
-int check_for_modify(hash_node_t *head, const char * key, const char *value);
+int check_for_modify(hash_node_t *head, const char *key, const char *value);
 /**
  * hash_table_set - add a key/value pair to the hash table
  * @ht: the hash table to update
@@ -47,7 +47,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  * @value: the new value
  * Return: 1 if a key existed and modified successfully
  */
-int check_for_modify(hash_node_t *head, const char * key, const char *value)
+int check_for_modify(hash_node_t *head, const char *key, const char *value)
 {
 	while (head)
 	{

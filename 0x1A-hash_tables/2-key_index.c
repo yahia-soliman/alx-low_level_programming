@@ -14,3 +14,20 @@ unsigned long int key_index(const unsigned char *key, unsigned long int size)
 	else
 		return (0);
 }
+
+/**
+ * _strcmp - easier than including string.h
+ * @s1: first string
+ * @s2: second string
+ * Return: the first diff or 0 if no diff
+ */
+int _strcmp(const char *s1, const char *s2)
+{
+	if (!(s1 && s2))
+		return (-1);
+
+	while (*s1 && *s2 && (*s1 - *s2) == 0)
+		s1++, s2++;
+
+	return (*s1 - *s2);
+}
