@@ -20,7 +20,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	stat = check_for_modify(ht->array[idx], key, value);
 	if (stat < 2)
 		return (stat);
-	node = malloc(sizeof(hash_node_t *));
+	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
 		return (0);
 	node->key = _strdup(key);
