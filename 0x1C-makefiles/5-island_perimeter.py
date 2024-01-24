@@ -17,5 +17,5 @@ def island_perimeter(grid):
                     grid[row][cell + 1]
                 )
             except IndexError:
-                return None
+                return ''
     return perimeter
