@@ -17,5 +17,12 @@ def island_perimeter(grid):
                     grid[row][cell + 1]
                 )
             except IndexError:
-                return ''
+                return island_perimeter(padding(grid))
     return perimeter
+
+
+def padding(grid):
+    """adds a padding for a grid to ignore the IndexError"""
+    empty_row = [[0 for any in grid[0]]]
+    new_grid = [[0] + row + [0] for row in grid]
+    return empty_row + new_grid + empty_row
