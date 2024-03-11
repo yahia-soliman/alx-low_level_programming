@@ -1,0 +1,17 @@
+RM = rm -f
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
+NAME = school
+SRC = main.c school.c
+OBJ = $(SRC: %.c=%.o)
+
+
+all:
+
+clean:
+
+oclean:
+
+fclean:
+
+re:
