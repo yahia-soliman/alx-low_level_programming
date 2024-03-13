@@ -23,6 +23,7 @@ int binary_search(int *array, size_t size, int value)
  * @array: pointer to the array to search in
  * @from: the start index (0)
  * @to: the last index (size - 1)
+ * @value: value to search for
  *
  * Return: 1 if found, -1 if not
  */
